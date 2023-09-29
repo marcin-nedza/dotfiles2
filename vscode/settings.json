@@ -1,0 +1,124 @@
+{
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.useLocalIp": true,
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.donotVerifyTags": true,
+    "debug.inlineValues": true,
+    "explorer.confirmDelete": false,
+    "workbench.startupEditor": "none",
+    "emmet.triggerExpansionOnTab": true,
+    "editor.minimap.enabled": false,
+    "opensslutils.useWsl": true,
+    "opensslutils.opensslPath": "",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "jest.debugCodeLens.showWhenTestStateIn": [
+        "fail",
+        "unknown",
+        "pass"
+      ],
+      "jest.rootPath": "",
+    "material-ui-snippets.showNotesOnStartup": false,
+    "diffEditor.renderSideBySide": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "bracketPairColorizer.depreciation-notice": false,
+    "tabnine.experimentalAutoImports": true,
+    "tabnine.disable_file_regex": [
+        "[.]md$",
+        "[.]html$",
+        "[.]css$",
+    ],
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+   
+    "thunder-client.codeSnippetLanguage": "cs-httpclient",
+    "workbench.editor.enablePreview": false,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "diffEditor.codeLens": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorCustomizations": {
+    
+    },
+    "editor.lineNumbers": "relative",
+    "keyboard.dispatch": "keyCode",
+    "vim.commandLineModeKeyBindings": [
+    
+    ],
+    "git.openRepositoryInParentFolders": "never",
+    "editor.codeLens": false,
+    "npm.keybindingsChangedWarningShown": true,
+    "errorLens.lintFilePaths": {
+
+        
+        "eslint": [
+            "**/*.eslintrc.{js,cjs,yaml,yml,json}",
+            "**/*package.json"
+        ],
+        "Stylelint": [
+            "**/*.stylelintrc",
+            "**/*.stylelintrc.{cjs,js,json,yaml,yml}",
+            "**/*stylelint.config.{cjs,js}",
+            "**/*package.json"
+        ]
+    },
+    "errorLens.excludeBySource": [
+        "csharp(RCS1036)",
+        "csharp(CS1998)"
+    ],
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+      },
+    "mssql.connections": [
+        {
+            "connectionString": "Server=localhost;Database=BuberDinner;User Id=sa;Password=Marcinnedza10;",
+            "profileName": "Server=localhost;Database=BuberDinner;User Id=sa;Password=Marcinnedza10;Encrypt=false;",
+            "database": "BuberDinner",
+            "user": "sa",
+            "server": "localhost",
+            "authenticationType": "SqlLogin",
+            "savePassword": true,
+            "password": "",
+            "encrypt": "Mandatory",
+            "trustServerCertificate": true
+        },
+        {
+            "connectionString": "Microsoft.SqlTools|itemtype:Profile|server:localhost|db:Crazy|user:sa|isConnectionString:true",
+            "profileName": "crazy",
+            "encrypt": "Mandatory",
+            "trustServerCertificate": true,
+            "server": "localhost",
+            "database": "Crazy",
+            "user": "sa",
+            "password": "",
+            "connectTimeout": 15,
+            "commandTimeout": 30,
+            "applicationName": "vscode-mssql",
+            "authenticationType": "SqlLogin",
+            "savePassword": true
+        }
+    ],
+    "mssql.objectExplorer.groupBySchema": false,
+   
+}

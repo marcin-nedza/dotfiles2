@@ -1,0 +1,6 @@
+{
+  "coc.preferences.extensionUpdateCheck": "never",
+    "coc.preferences.formatOnSaveFiletypes":[
+    "prisma"
+]
+}
