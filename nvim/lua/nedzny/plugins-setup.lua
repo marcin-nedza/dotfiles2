@@ -19,23 +19,37 @@ vim.cmd([[
   augroup end
 ]])
 
+
 local status, packer = pcall(require, "packer")
 if not status then
 	return
 end
+
 
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	--lua functions that many plugins use
 	use("nvim-lua/plenary.nvim")
 
+    --import const
+    use("yardnsm/vim-import-cost")
 	--color scheme
-	use("folke/tokyonight.nvim")
-	use("Mofiqul/dracula.nvim")
-
+  -- use({
+	 --  'rose-pine/neovim',
+	 --  as = 'rose-pine',
+	 --  config = function()
+		--   vim.cmd('colorscheme rose-pine')
+	 --  end
+  -- })
+--   use("bluz71/vim-nightfly-colors")
+-- use { "catppuccin/nvim", as = "catppuccin" }
 	--tmux & split window navigation
+    use{"ellisonleao/gruvbox.nvim"} 
 	use("christoomey/vim-tmux-navigator")
 
+    --harpoon
+
+  use("theprimeagen/harpoon")
 	--maximizes and restores current window
 	use("szw/vim-maximizer")
 
@@ -54,31 +68,49 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 
 	--fuzzy finding
+
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
+      use {
+	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  -- or                            , branch = '0.1.x',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+  }
+    --new lsp
+     use {
+	  'VonHeikemen/lsp-zero.nvim',
+	  branch = 'v1.x',
+	  requires = {
+		  -- LSP Support
+		  {'neovim/nvim-lspconfig'},
+		  {'williamboman/mason.nvim'},
+		  {'williamboman/mason-lspconfig.nvim'},
 
-	--autocompletion
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-    use { 'neoclide/coc.nvim', branch='release' }
-	--snippets
-	use("L3MON4D3/LuaSnip")
-	use("saadparwaiz1/cmp_luasnip")
-    use('hrsh7th/cmp-vsnip')
-    use('hrsh7th/vim-vsnip')
-	use("rafamadriz/friendly-snippets")
+		  -- Autocompletion
+		  {'hrsh7th/nvim-cmp'},
+		  {'hrsh7th/cmp-buffer'},
+		  {'hrsh7th/cmp-path'},
+		  {'saadparwaiz1/cmp_luasnip'},
+		  {'hrsh7th/cmp-nvim-lsp'},
+		  {'hrsh7th/cmp-nvim-lua'},
 
-	--managing and installing lsp server
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
+		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},
+		  {'rafamadriz/friendly-snippets'},
+	  }
+  }
+    use("ray-x/go.nvim")
+--markdown preview
+use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+})
 
-	--configuring lsp server
-	use("neovim/nvim-lspconfig")
-	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+    use("OmniSharp/omnisharp-vim")
+    use('dense-analysis/ale')
+--	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
 
 	--formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim")
@@ -101,15 +133,22 @@ return packer.startup(function(use)
 			ts_update()
 		end,
 	})
+    use({
+  "nvim-treesitter/nvim-treesitter-textobjects",
+  after = "nvim-treesitter",
+  requires = "nvim-treesitter/nvim-treesitter",
+})
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
 	--git signs plugin
-	use("lewis6991/gitsigns.nvim")
+--	use("lewis6991/gitsigns.nvim")
 	--autosave
-
-	use({
+use {
+  "ray-x/lsp_signature.nvim",
+}
+use({
 		"Pocco81/auto-save.nvim",
 		config = function()
 			require("auto-save").setup({

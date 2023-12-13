@@ -3,17 +3,21 @@ vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 
 --general keymaps
-
 keymap.set("i", "jk", "<ESC>")
+--snippets
 keymap.set("i", "<leader>kk", "<right> =>{}<left><CR><ESC><S-o>")
 keymap.set("i", "<leader>kr", "<right>")
 keymap.set("i", "<leader>kf", "<right> {}<left><CR><ESC><S-o>")
+keymap.set("i", "<leader>ee", "<right> if err != nil {}<left><CR><ESC><S-o><right><right>")
+keymap.set("i", "<leader>ko", "<right>() =>{}<left><CR><ESC><up>$<left><left><left><left>i")
+keymap.set("i", "<leader>;;", " := ")
+keymap.set("i", "<leader>clg", "console.log()<left>")
+--
 keymap.set("n","<C-d>","<C-d>zz")
 keymap.set("n","<C-u>","<C-u>zz")
 keymap.set("n","<C-[>","zH")
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "x", '"_x')
-keymap.set("n","<leader>T","<cmd>lua vim.lsp.buf.hover()<CR>")
 keymap.set("n", "<leader>=", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
@@ -39,12 +43,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 --nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>")
-
-
-
---telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+vim.cmd [[augroup highlight_yank]]
+vim.cmd [[  autocmd!]]
+vim.cmd [[  autocmd TextYankPost * lua vim.highlight.on_yank({higroup='Visual', timeout=200})]]
+vim.cmd [[augroup END]]
