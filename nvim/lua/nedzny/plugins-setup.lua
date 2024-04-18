@@ -30,7 +30,9 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	--lua functions that many plugins use
 	use("nvim-lua/plenary.nvim")
-
+    --java 
+    use ("mfussenegger/nvim-jdtls")
+    use {'artur-shaik/jc.nvim'}
     --import const
     use("yardnsm/vim-import-cost")
 	--color scheme
@@ -71,7 +73,7 @@ return packer.startup(function(use)
 
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
       use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.3',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -94,16 +96,19 @@ return packer.startup(function(use)
 		  {'hrsh7th/cmp-nvim-lua'},
 
 		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
     use("ray-x/go.nvim")
---markdown preview
+
 use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	tag = "v2.1.1", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!:).
+	run = "make install_jsregexp"
 })
+--markdown preview
 
 use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
@@ -115,7 +120,7 @@ use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = fun
 	--formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
-
+    use('MunifTanjim/prettier.nvim')
     --vim be good 
     use('ThePrimeagen/vim-be-good')
     --prisma

@@ -94,8 +94,10 @@ local on_attach = function(client, bufnr)
 	-- local opts = { noremap = true, silent = true, buffer = bufnr }
 -- lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
+keymap.set("n", "gr", function() vim.lsp.buf.references() end, { noremap = true, silent = true, desc = "LSP Goto Reference" })
   keymap.set("n", "gd", function() vim.lsp.buf.definition{on_list=on_list} end, opts)
   keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+
   keymap.set("n", "<leader>lf", function() vim.lsp.buf.format({timeout_ms=1000}) end, opts)
   keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
   keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
@@ -119,6 +121,7 @@ typescript.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 	},
+
 })
 
 vim.diagnostic.config({
