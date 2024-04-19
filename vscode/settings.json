@@ -3,7 +3,6 @@
     "liveServer.settings.useLocalIp": true,
     "liveServer.settings.CustomBrowser": "chrome",
     "liveServer.settings.donotVerifyTags": true,
-    "debug.inlineValues": true,
     "explorer.confirmDelete": false,
     "workbench.startupEditor": "none",
     "emmet.triggerExpansionOnTab": true,
@@ -20,32 +19,18 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "jest.debugCodeLens.showWhenTestStateIn": [
-        "fail",
-        "unknown",
-        "pass"
-      ],
-      "jest.rootPath": "",
-    "material-ui-snippets.showNotesOnStartup": false,
     "diffEditor.renderSideBySide": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "workbench.colorTheme": "One Dark Pro Darker",
-    "bracketPairColorizer.depreciation-notice": false,
-    "tabnine.experimentalAutoImports": true,
-    "tabnine.disable_file_regex": [
-        "[.]md$",
-        "[.]html$",
-        "[.]css$",
-    ],
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
    
-    "thunder-client.codeSnippetLanguage": "cs-httpclient",
     "workbench.editor.enablePreview": false,
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "update.showReleaseNotes": false,
     "workbench.iconTheme": "material-icon-theme",
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -90,35 +75,35 @@
     "[csharp]": {
         "editor.defaultFormatter": "ms-dotnettools.csharp"
       },
-    "mssql.connections": [
-        {
-            "connectionString": "Server=localhost;Database=BuberDinner;User Id=sa;Password=Marcinnedza10;",
-            "profileName": "Server=localhost;Database=BuberDinner;User Id=sa;Password=Marcinnedza10;Encrypt=false;",
-            "database": "BuberDinner",
-            "user": "sa",
-            "server": "localhost",
-            "authenticationType": "SqlLogin",
-            "savePassword": true,
-            "password": "",
-            "encrypt": "Mandatory",
-            "trustServerCertificate": true
-        },
-        {
-            "connectionString": "Microsoft.SqlTools|itemtype:Profile|server:localhost|db:Crazy|user:sa|isConnectionString:true",
-            "profileName": "crazy",
-            "encrypt": "Mandatory",
-            "trustServerCertificate": true,
-            "server": "localhost",
-            "database": "Crazy",
-            "user": "sa",
-            "password": "",
-            "connectTimeout": 15,
-            "commandTimeout": 30,
-            "applicationName": "vscode-mssql",
-            "authenticationType": "SqlLogin",
-            "savePassword": true
-        }
-    ],
+    
     "mssql.objectExplorer.groupBySchema": false,
-   
+
+    "vim.useSystemClipboard":true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+      }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+        {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+      },
+      {
+        "before": ["K"],
+        "commands": ["lineBreakInsert"],
+        "silent": true
+      },
+    ],
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false
+    },
+"workbench.activityBar.location": "default",
+"window.menuBarVisibility": "toggle"
 }
