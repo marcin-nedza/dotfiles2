@@ -140,6 +140,11 @@ _G.packer_plugins = {
     path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  ["guihua.lua"] = {
+    loaded = true,
+    path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
+  },
   harpoon = {
     loaded = true,
     path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -149,11 +154,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
-  ["jc.nvim"] = {
-    loaded = true,
-    path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/jc.nvim",
-    url = "https://github.com/artur-shaik/jc.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -212,11 +212,6 @@ _G.packer_plugins = {
     path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
-  ["nvim-jdtls"] = {
-    loaded = true,
-    path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
-    url = "https://github.com/mfussenegger/nvim-jdtls"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -250,11 +245,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
-  ["omnisharp-vim"] = {
-    loaded = true,
-    path = "/home/nedzny/.local/share/nvim/site/pack/packer/start/omnisharp-vim",
-    url = "https://github.com/OmniSharp/omnisharp-vim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -330,8 +320,8 @@ time([[Config for auto-save.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 vim.cmd [[ packadd nvim-ts-autotag ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

@@ -30,25 +30,13 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	--lua functions that many plugins use
 	use("nvim-lua/plenary.nvim")
-    --java 
-    use ("mfussenegger/nvim-jdtls")
-    use {'artur-shaik/jc.nvim'}
     --import const
     use("yardnsm/vim-import-cost")
 	--color scheme
-  -- use({
-	 --  'rose-pine/neovim',
-	 --  as = 'rose-pine',
-	 --  config = function()
-		--   vim.cmd('colorscheme rose-pine')
-	 --  end
-  -- })
---   use("bluz71/vim-nightfly-colors")
--- use { "catppuccin/nvim", as = "catppuccin" }
 	--tmux & split window navigation
     use{"ellisonleao/gruvbox.nvim"} 
 	use("christoomey/vim-tmux-navigator")
-
+ use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
     --harpoon
 
   use("theprimeagen/harpoon")
@@ -99,6 +87,24 @@ return packer.startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+--   use {
+--     'neovim/nvim-lspconfig',
+--     tag = 'v0.1.6', -- Replace 'v0.0.0' with the tag/version you want to install
+-- }
+-- use {
+--   'VonHeikemen/lsp-zero.nvim',
+--   branch = 'v3.x',
+--   requires = {
+--     --- Uncomment the two plugins below if you want to manage the language servers from neovim
+--     {'williamboman/mason.nvim'},
+--     {'williamboman/mason-lspconfig.nvim'},
+--
+--     {'neovim/nvim-lspconfig'},
+--     {'hrsh7th/nvim-cmp'},
+--     {'hrsh7th/cmp-nvim-lsp'},
+--     {'L3MON4D3/LuaSnip'},
+--   }
+-- }
     use("ray-x/go.nvim")
 
 use({
@@ -112,7 +118,6 @@ use({
 
 use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-    use("OmniSharp/omnisharp-vim")
     use('dense-analysis/ale')
 --	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 

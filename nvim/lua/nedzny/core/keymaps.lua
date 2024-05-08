@@ -14,24 +14,28 @@ local function is_next_char_right_bracket()
     return next_char == "}"
 end
 
-require('go').setup() 
+require('go').setup()
 local ls = require('luasnip')
 local keymap = vim.keymap -- for conciseness
 --general keymaps
 keymap.set("i", "jk", "<ESC>")
 --go format
 keymap.set("n", "<leader>lf", function() require('go.format').goimport() end, {desc = "Format Go code"})
+keymap.set("n","<leader>gr","<cmd>lua vim.lsp.buf.references()<CR>")
+--go test
+keymap.set("n","<leader>t","<cmd>GoTestFunc -v -n 1<CR>")
 
 --snippets
 keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
 keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
 keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
-
+keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
 keymap.set({"i", "s"}, "<C-E>", function()
 	if ls.choice_active() then
 		ls.change_choice(1)
 	end
 end, {silent = true})
+keymap.set("n","<leader><leader>s","<cmd>source ~/.config/nvim/lua/nedzny/plugins/luasnip.lua<CR>")
 
 keymap.set("i", "<leader>kk", "<right> =>{}<left><CR><ESC><S-o>")
 keymap.set("i", "<leader>kr", "<right>")
@@ -44,10 +48,12 @@ keymap.set("i", "<leader>clg", "console.log()<left>")
 keymap.set("n","<C-d>","<C-d>zz")
 keymap.set("n","<C-u>","<C-u>zz")
 keymap.set("n","<C-[>","zH")
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+keymap.set("n", "<ESC>", ":nohl<CR>")
 keymap.set("n", "x", '"_x')
 keymap.set("n", "<leader>=", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
+--close quickfix window
+keymap.set("n","<leader>cc","<cmd> cclose<CR>")
 
 keymap.set("v","J",":m '>+1<CR>gv=gv")
 keymap.set("v","K",":m '<-2<CR>gv=gv")
@@ -59,10 +65,11 @@ keymap.set("n", "<leader>sx", ":clos<CR>") -- close current split window
 keymap.set("n", "<leader>]", ":vertical resize +10<CR>")
 keymap.set("n", "<leader>[", ":vertical resize -10<CR>")
 
-keymap.set("n", "<leader>to", ":tabnew<CR>") --open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") --close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") --go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") --go  to previous tab
+
+-- keymap.set("n", "<leader>to", ":tabnew<CR>") --open new tab
+-- keymap.set("n", "<leader>tx", ":tabclose<CR>") --close current tab
+-- keymap.set("n", "<leader>tn", ":tabn<CR>") --go to next tab
+-- keymap.set("n", "<leader>tp", ":tabp<CR>") --go  to previous tab
 
 --java
 keymap.set("n", "<leader>jts", "<cmd>lua require('jc.jdtls').generate_toString()<CR>")
