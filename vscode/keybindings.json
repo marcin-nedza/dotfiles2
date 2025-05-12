@@ -1,9 +1,15 @@
 // Umieść swoje powiązania klawiszy w tym pliku, aby zastąpić ustawienia domyślneauto[]
 [
+  // {
+  //   "key": "space+l f",
+  //   "command": "prettier.forceFormatDocument",
+  //   "when":"vim.active && vim.mode == 'Normal'"
+  // },
   {
-    "key": "space+l f",
-    "command": "prettier.forceFormatDocument",
-    "when":"vim.active && vim.mode == 'Normal'"
+    "key": "space l f",
+    "command": "editor.action.formatDocument",
+    // "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    "when": "vim.active && vim.mode == 'Normal'&& editorTextFocus "
   },
   {
     "key": "tab",
@@ -44,6 +50,11 @@
     "when": "viewContainer.workbench.view.explorer.enabled"
   },
   {
+    "key": "ctrl+l",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
     "key": "j",
     "command": "workbench.action.interactivePlayground.arrowDown",
     "when": "interactivePlaygroundFocus && !editorTextFocus"
@@ -53,7 +64,6 @@
     "command": "workbench.action.interactivePlayground.arrowUp",
     "when": "interactivePlaygroundFocus && !editorTextFocus"
   },
-
   {
     "key": "space a",
     "command": "editor.action.quickFix",
@@ -63,86 +73,126 @@
     "key": "a",
     "command": "explorer.newFile",
     "when": "explorerViewletFocus && !inputFocus"
-},
-
-   { "key": "space e", "command": "workbench.action.toggleSidebarVisibility",
-   "when": "editorTextFocus  && vim.active && vim.mode == 'Normal'"
-},
-
-{ 
-    "key":  "space p f",
-    "command": "workbench.action.quickOpen" ,
-    "when":"editorTextFocus && vim.active && vim.mode == 'Normal'"
-},
-{
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletFocus && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletFocus && !inputFocus"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "editorTextFocus  && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space p f",
+    "command": "workbench.action.quickOpen",
+    "when": " editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
     "key": "ctrl+j",
     "command": "workbench.action.quickOpenNavigateNext",
     "when": "inQuickOpen"
-},
-{
+  },
+  {
     "key": "ctrl+k",
     "command": "workbench.action.quickOpenNavigatePrevious",
     "when": "inQuickOpen"
-},
-{
+  },
+  {
     "key": "ctrl+w",
     "command": "workbench.action.closeActiveEditor",
     "when": "editorFocus"
-},
-// {
-//     "key": "ctrl+a n",
-//     "command": "workbench.action.nextEditor"
-// },
-// {
-//     "key": "ctrl+a p",
-//     "command": "workbench.action.previousEditor"
-// },
-{
+  },
+  // {
+  //     "key": "ctrl+a n",
+  //     "command": "workbench.action.nextEditor"
+  // },
+  // {
+  //     "key": "ctrl+a p",
+  //     "command": "workbench.action.previousEditor"
+  // },
+  {
     "key": "space c o",
     "command": "editor.action.organizeImports",
-    "when":"editorTextFocus && vim.active && vim.mode=='Normal'"
-},
-{
-  "key": "ctrl+a -",
-  "command": "workbench.action.terminal.new"
-},
-{
+    "when": "editorTextFocus && vim.active && vim.mode=='Normal'"
+  },
+  {
+    "key": "ctrl+a -",
+    "command": "workbench.action.terminal.new"
+  },
+  {
     "key": "ctrl+a x",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
-},
-{
-  "key": "ctrl+a \\",
-  "command": "workbench.action.terminal.split",
-  "when": "terminalFocus"
-},
-{
-  "key": "ctrl+a w",
-  "command": "workbench.action.closeOtherEditors",
-  "when": "editorFocus"
-},
-{
-  "key": "ctrl+shift+j",
-  "command": "workbench.action.terminal.focusNext",
-  "when": "terminalFocus"
-},
-{
-  "key": "ctrl+shift+k",
-  "command": "workbench.action.terminal.focusPrevious",
-  "when": "terminalFocus && terminalProcessSupported && !terminalTextSelected"
-},{
-  "key": "ctrl+l",
-  "command": "workbench.action.terminal.focusNextPane",
-  "when": "terminalFocus && terminalProcessSupported && !terminalTextSelected"
-},{
-  "key": "ctrl+h",
-  "command": "workbench.action.terminal.focusPreviousPane",
-  "when": "terminalFocus && terminalProcessSupported && !terminalTextSelected"
-},
-
-{
-  "key": "ctrl+j",
-  "command": "-workbench.action.togglePanel"
-},
-
+  },
+  {
+    "key": "ctrl+a \\",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+a w",
+    "command": "workbench.action.closeOtherEditors",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalProcessSupported && !terminalTextSelected"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalProcessSupported && !terminalTextSelected"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalProcessSupported && !terminalTextSelected"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "shift+k",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus && !vim.mode=='visual' "
+  },
+  {
+    "key": "space r",
+    "command": "workbench.action.debug.run",
+    "when": "editorTextFocus && vim.active && vim.mode=='Normal'"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "space p s",
+    "command": "periscope.search",
+    "when": "vim.mode!='Insert' && editorTextFocus"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "editor.action.triggerParameterHints",
+    "when": "editorHasSignatureHelpProvider && editorTextFocus"
+  }
 ]

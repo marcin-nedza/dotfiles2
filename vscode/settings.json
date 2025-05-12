@@ -1,8 +1,4 @@
 {
-    "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.useLocalIp": true,
-    "liveServer.settings.CustomBrowser": "chrome",
-    "liveServer.settings.donotVerifyTags": true,
     "explorer.confirmDelete": false,
     "workbench.startupEditor": "none",
     "emmet.triggerExpansionOnTab": true,
@@ -25,7 +21,6 @@
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-   
     "workbench.editor.enablePreview": false,
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -43,20 +38,14 @@
     "diffEditor.codeLens": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "workbench.colorCustomizations": {
-    
-    },
+    "workbench.colorCustomizations": {},
     "editor.lineNumbers": "relative",
     "keyboard.dispatch": "keyCode",
-    "vim.commandLineModeKeyBindings": [
-    
-    ],
+    "vim.commandLineModeKeyBindings": [],
     "git.openRepositoryInParentFolders": "never",
     "editor.codeLens": false,
     "npm.keybindingsChangedWarningShown": true,
     "errorLens.lintFilePaths": {
-
-        
         "eslint": [
             "**/*.eslintrc.{js,cjs,yaml,yml,json}",
             "**/*package.json"
@@ -74,36 +63,76 @@
     ],
     "[csharp]": {
         "editor.defaultFormatter": "ms-dotnettools.csharp"
-      },
-    
+    },
     "mssql.objectExplorer.groupBySchema": false,
-
-    "vim.useSystemClipboard":true,
+    "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
     "vim.leader": "<space>",
     "vim.insertModeKeyBindings": [
-      {
-        "before": ["j", "j"],
-        "after": ["<Esc>"]
-      }
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "k",
+                "r"
+            ],
+            "commands": [
+                "cursorRight",
+                "<Esc>"
+            ],
+        }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": ["<S-h>"], "commands": [":bprevious"] },
-    { "before": ["<S-l>"], "commands": [":bnext"] },
         {
-        "before": ["<C-n>"],
-        "commands": [":nohl"]
-      },
-      {
-        "before": ["K"],
-        "commands": ["lineBreakInsert"],
-        "silent": true
-      },
+            "before": [
+                "<S-h>"
+            ],
+            "commands": [
+                ":bprevious"
+            ]
+        },
+        {
+            "before": [
+                "<S-l>"
+            ],
+            "commands": [
+                ":bnext"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
     ],
     "vim.handleKeys": {
-      "<C-a>": false,
-      "<C-f>": false
+        "<C-a>": false,
+        "<C-f>": false
     },
-"workbench.activityBar.location": "default",
-"window.menuBarVisibility": "toggle"
+    "workbench.activityBar.location": "default",
+    "window.menuBarVisibility": "toggle",
+    "redhat.telemetry.enabled": false,
+    "editor.fontSize": 12,
+    "java.project.outputPath": "/out",
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
