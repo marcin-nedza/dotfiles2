@@ -1,0 +1,28 @@
+let mapleader = " "
+nnoremap <leader>lf :action ReformatCode<CR>
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+nnoremap <leader>r :action RunClass<CR>
+nnoremap <leader>co :action OptimizeImports<CR>
+nnoremap <leader>ct :action Terminal.OpenInTerminal<CR>
+nnoremap <leader>aa :action ShowIntentionActions<CR>
+nnoremap <leader>ag :action Generate<CR>
+nnoremap <leader>ad :action ShowErrorDescription<CR>
+
+
+" Map Shift+h to :bprevious (previous buffer)
+nnoremap <S-h> :tabprevious<CR>
+ " nnoremap <S-h>action PreviousTab<CR>
+
+" Map Shift+l to :bnext (next buffer)
+nnoremap <S-l> :tabnext<CR>
+" nnoremap <S-l>action NextTab<CR>
+
+imap <leader>kk <Esc>lA{<CR><Esc>O
+imap <leader>kr <Esc><Right>a
+
+" Move selected line(s) down in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+
+" Move selected line(s) up in visual mode
+vnoremap K :m '<-2<CR>gv=gv
+set clipboard=unnamedplus
